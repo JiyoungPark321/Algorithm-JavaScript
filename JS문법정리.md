@@ -40,7 +40,42 @@
   // 4
   ```
 
-  
+
+
+### 2. 반복문
+
+#### 1) for 문
+
+```javascript
+let result = 0;
+for (let i = 0; i < 10; i++) {
+    result += i;
+}
+return result;
+```
+
+- for (시작; 조건; 끝) { 내용 }
+
+
+
+#### 2) While 문
+
+```javascript
+let result = 0;
+let i = 0;
+while (i < 10) {
+    result += i;
+    i++;
+}
+return result;
+```
+
+
+
+#### +) break, continue
+
+- break 는 반복문 안에 넣으면 반복문을 중단 할 수 있다.
+- continue 는 반복문을 끝까지 돌긴 하지만 continue가 있는 아랫부분은 실행하지 않고 다음 반복문으로 넘어간다.
 
 
 
