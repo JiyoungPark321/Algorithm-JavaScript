@@ -2,6 +2,18 @@
 
 
 
+### 목차
+
+[1. Math](#1.-math)
+
+[2. 반복문](#2.-반복문)
+
+
+
+
+
+
+
 ### 1. Math 
 
 - https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Math
@@ -42,6 +54,48 @@
 
 
 
+#### 4) Math.max()
+
+- 입력값으로 받은 0개 이상의 숫자 중 가장 큰 숫자를 반환
+
+  ```javascript
+  Math.max(10, 20);
+  // 20
+  
+  let arr = [1, 2, 3];
+  let result = Math.max(...arr);
+  // 3
+  ```
+
+- 아무 요소도 넣지 않는다면 `Math.max()  ` `-Infinity` 로 반환한다.
+
+- 한 개 이상의 요소가 숫자로 변환되지 않는다면 `NaN` 로 반환된다.
+
+- spread operator 를 사용하지 않고 `arr (배열)` 을 넣으면 `NaN` 가 뜬다. → 인자를 넣어줘야 한다.  
+
+  
+
+#### 5) Math.min()
+
+- 주어진 숫자들 중 가장 작은 값을 반환
+
+  ```javascript
+  Math.min(10, 20, 30);
+  // 10
+  
+  let arr = [1, 2, 3];
+  let result = Math.max(...arr);
+  // 1
+  ```
+
+- 아무 요소도 넣지 않는다면 `Math.max()` `Infinity` 로 반환한다.
+
+- 한 개 이상의 요소가 숫자로 변환되지 않는다면 `NaN` 로 반환된다.
+
+- spread operator 를 사용하지 않고 `arr (배열)` 을 넣으면 `NaN` 가 뜬다. → 인자를 넣어줘야 한다. 
+
+
+
 ### 2. 반복문
 
 #### 1) for 문
@@ -79,7 +133,13 @@ return result;
 
 
 
+### 3. Number
 
+- https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Number
+
+#### 1) Number.MAX_SAFE_INTEGER
+
+- JS 에서 안전한 최대 정수값을 나타낸다. (2^53 - 1)
 
 
 
