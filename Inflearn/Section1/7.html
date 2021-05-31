@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(day, arr) {
+        let answer = 0;
+        // 내가 푼 방법
+        // for (let x of arr) {
+        //   x = x.toString();
+        //   day = day.toString();
+        //   if (day === x[x.length - 1]) {
+        //     answer += 1;
+        //   }
+        // }
+
+        // 다른 방법
+        for (let x of arr) {
+          if (x % 10 === day) answer++;
+        }
+        return answer;
+      }
+
+      arr = [25, 23, 11, 47, 53, 17, 33];
+      // arr = [12, 20, 54, 30, 87, 91, 30];
+      console.log(solution(3, arr));
+    </script>
+  </body>
+</html>
