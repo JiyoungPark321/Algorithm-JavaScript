@@ -170,9 +170,151 @@ return result;
 
 
 
+### 4. reduce, reduceRight
+
+#### 1. reduce
+
+- `배열.reduce((누적값, 현재값, 인덱스, 요소) => { return 결과}, 초기값);`
+
+  ```javascript
+  const arr = [1, 2, 3];
+  
+  result = arr.reduce((acc, cur, i) => {
+      console.log(acc, cur, i);
+      return acc + cur;
+  }, 0);
+  // 0 1 0
+  // 1 2 1
+  // 3 3 2
+  result;
+  // 6
+  ```
+
+- 초기 값을 적지 않으면 0번째 인덱스가 초기값이 된다.
+
+  ```javascript
+  const arr = [1, 2, 3];
+  
+  result = arr.reduce((acc, cur, i) => {
+      console.log(acc, cur, i);
+      return acc + cur;
+  });
+  // 초기값 = 1
+  // 1 2 1
+  // 3 3 2
+  result; 
+  // 6
+  ```
+
+- 요소란?
+
+  ```javascript
+  const arr = [1, 2, 3, 4, 5];
+  
+  result = arr.reduce((acc, cur, i, e) => {
+      console.log(acc, cur, i, e);
+      return acc + cur;
+  }, 0;
+  
+  result; 
+  // 0 1 0 [1, 2, 3, 4, 5]
+  // 1 2 1 [1, 2, 3, 4, 5]
+  // 3 3 2 [1, 2, 3, 4, 5]
+  // 6 4 3 [1, 2, 3, 4, 5]
+  // 10 5 4 [1, 2, 3, 4, 5]
+  // 15
+  ```
+
+  
+
+#### 2. reduceRight
+
+- reduce 와 동작은 같지만 요소 순회를 오른쪽에서부터 왼쪽으로 한다.
+
+  ```javascript
+  const arr = [1, 2, 3];
+  
+  result = arr.reduce((acc, cur, i) => {
+      console.log(acc, cur, i);
+      return acc + cur;
+  }, 0);
+  // 0 3 2
+  // 3 2 1
+  // 5 1 0
+  result; 
+  // 6
+  ```
+
+  
+
+#### 5. array.splice()
+
+- 배열에 추가/제가/교체/추출 가능
+
+  ```javascript
+  arr.splice(start, count, [value1], [value2],...)
+  ```
+
+  
+
+##### 1. 배열에 요소 추가하기
+
+```javascript
+let arr = [0, 1, 2, 3];
+
+// 배열 2번째 위치한 곳에 숫자 5를 추가
+arr.splice(2, 0, 5);
+// [0, 1, 5, 2, 3]
+
+// 배열 2번째 위치한 곳에 숫자 5, 7 을 추가
+arr.splice(2, 0, 5, 7);
+```
 
 
 
+##### 2. 배열 요소 제거하기
+
+```javascript
+let arr = [0, 1, 2, 3];
+
+// 배열 1번째부터 1개 제거
+arr.splice(1, 1);
+// [0, 2, 3]
+
+// 배열 1번째부터 2개 제거
+arr.splice(0, 3);
+```
+
+
+
+##### 3. 배열 요소 교체하기
+
+```javascript
+let arr = [0, 1, 2, 3];
+
+// 배열 1번째부터 1개를 제거하고 숫자 5 추가
+arr.splice(1, 1, 5);
+// [0, 5, 2, 3]
+
+// 배열 1번째부터 2개 제거하고 숫자 10, 11 추가
+arr.splice(0, 10, 11, 3);
+```
+
+
+
+##### 4. 배열 요소 추출하기 (제거한걸 변수에 담아주면 됨)
+
+```javascript
+let arr = [0, 1, 2, 3];
+
+// 배열 1번째부터 1개를 제거 후 새로운 변수 newArr에 담아주기
+let newArr = arr.splice(1, 1);
+// [1]
+
+// 배열 1번째부터 2개 제거 후 새로운 변수 newArr에 담아주기
+let newArr = arr.splice(1, 2);
+// [1, 2]
+```
 
 
 
