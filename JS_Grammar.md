@@ -2,13 +2,7 @@
 
 
 
-### 목차
-
-[1. Math](#1.-math)
-
-[2. 반복문](#2.-반복문)
-
-
+[toc]
 
 
 
@@ -318,5 +312,22 @@ let newArr = arr.splice(1, 2);
 
 
 
+#### 5. replace()
 
+- 문자열에서 변경하려는 문자열이 여러번 반복될 경우, 첫번째로 발견한 문자열만 치환한다.
 
+  ```javascript
+  let test = 'BANANA';
+  let result = test.replace('A', '@');
+  
+  console.log(result);
+  // B@NANA
+  ```
+
+- 아쉽게도 replaceAll() 이라는 함수는 없음
+
+- 모두 바꾸려면 정규 표현식(regular expression) 을 사용해야 한다.
+
+- 정규식으로 찾으려는 문자열은 `/` 로 감싸서, 파라미터로 들어가는 값이 정규식임을 알려준다.
+
+- `/` 뒤에는 `g` 라는 modifier 를 부
