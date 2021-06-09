@@ -330,4 +330,26 @@ let newArr = arr.splice(1, 2);
 
 - 정규식으로 찾으려는 문자열은 `/` 로 감싸서, 파라미터로 들어가는 값이 정규식임을 알려준다.
 
-- `/` 뒤에는 `g` 라는 modifier 를 부
+- `/` 뒤에는 `g` 라는 modifier 를 붙인다. 여기서 `g` 는 global match 라는 의미
+
+  ```javascript
+  let fruits = 'apple, banana, orange, strawberry, Banana';
+  let replaced_fruits = fruits.replace(/banana/g, 'tomato');
+  
+  console.log(replaced_fruits)
+  // apple, tomato, orange, strawberry, Banana
+  ```
+
+  
+
+- 대소문자 구분없이 모든 문자열을 치환하고 싶을 때는 `i` 라는  modifier 를 사용하면 되므로 `i`와 `g`를 함께 적어주면 된다.
+
+  ```javascript
+  let fruits = 'apple, banana, orange, strawberry, Banana';
+  let replaced_fruits = fruits.replace(/banana/gi, 'tomato');
+  
+  console.log(replaced_fruits)
+  // apple, tomato, orange, strawberry, tomato
+  ```
+
+  

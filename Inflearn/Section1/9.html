@@ -7,7 +7,15 @@
     <script>
       function solution(s) {
         let answer;
-        answer = str.replace("A", "#");
+        // 1. 정규표현식으로 풀기
+        answer = str.replace(/A/g, "#");
+
+        // 2. for 문으로 풀기
+        // for (let x of s) {
+        //   if (x === "A") answer += "#";
+        //   else answer += x;
+        // }
+
         return answer;
       }
       let str = "BANANA";
