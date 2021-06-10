@@ -1,0 +1,27 @@
+<head>
+  <meta charset="UTF-8">
+  <title>출력결과</title>
+</head>
+<body>
+  <script>
+      function solution(s, t){
+        // 1. for 문으로 풀기
+        // let answer = 0;
+        // for (let x of s) {
+        //   if (x === t) {
+        //     answer++;
+        //   }
+        // }
+        
+        // 2. split 으로 풀기
+        let newStr = s.split(t);
+        let answer = newStr.length - 1;
+
+        return answer;
+      }
+      
+      let str="COMPUTERPROGRAMMING";
+      console.log(solution(str, 'R'));
+  </script>
+</body>
+</html>
