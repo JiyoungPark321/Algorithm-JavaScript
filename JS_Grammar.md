@@ -354,7 +354,7 @@ let newArr = arr.splice(1, 2);
 
   
 
-### 7. split
+### 7. split()
 
 - 문자열을 분할하는 메서드
 
@@ -381,6 +381,22 @@ let newArr = arr.splice(1, 2);
   let string2 = 'water,coke,juice';
   string2.split(',', 2);
   //["water", "coke"]
+  ```
+
+- ex
+
+  - Separator가 맨 앞 or 맨 뒤에 있을 경우 빈 문자열로 반환됨.
+
+  ```javascript
+  let str='COMPUTERPROGRAMMINGR';
+  let newStr = str.split('R');
+  console.log(newStr);
+  // ["COMPUTE", "P", "OG", "AMMING", ""]
+  
+  let str1='RRCOMPUTERPROGRAMMINGRRR';
+  let newStr1 = str.split('R');
+  console.log(newStr);
+  // ["", "", COMPUTE", "P", "OG", "AMMING", "", "", ""]
   ```
 
   
