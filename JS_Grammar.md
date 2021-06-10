@@ -241,7 +241,7 @@ return result;
 
   
 
-#### 5. array.splice()
+### 5. array.splice()
 
 - 배열에 추가/제가/교체/추출 가능
 
@@ -251,7 +251,7 @@ return result;
 
   
 
-##### 1. 배열에 요소 추가하기
+#### 1. 배열에 요소 추가하기
 
 ```javascript
 let arr = [0, 1, 2, 3];
@@ -266,7 +266,7 @@ arr.splice(2, 0, 5, 7);
 
 
 
-##### 2. 배열 요소 제거하기
+#### 2. 배열 요소 제거하기
 
 ```javascript
 let arr = [0, 1, 2, 3];
@@ -281,7 +281,7 @@ arr.splice(0, 3);
 
 
 
-##### 3. 배열 요소 교체하기
+#### 3. 배열 요소 교체하기
 
 ```javascript
 let arr = [0, 1, 2, 3];
@@ -296,7 +296,7 @@ arr.splice(0, 10, 11, 3);
 
 
 
-##### 4. 배열 요소 추출하기 (제거한걸 변수에 담아주면 됨)
+#### 4. 배열 요소 추출하기 (제거한걸 변수에 담아주면 됨)
 
 ```javascript
 let arr = [0, 1, 2, 3];
@@ -312,7 +312,7 @@ let newArr = arr.splice(1, 2);
 
 
 
-#### 5. replace()
+### 6. replace()
 
 - 문자열에서 변경하려는 문자열이 여러번 반복될 경우, 첫번째로 발견한 문자열만 치환한다.
 
@@ -350,6 +350,37 @@ let newArr = arr.splice(1, 2);
   
   console.log(replaced_fruits)
   // apple, tomato, orange, strawberry, tomato
+  ```
+
+  
+
+### 7. split
+
+- 문자열을 분할하는 메서드
+
+- string.split(separator, limit)   :  문자열을 separator로 잘라서 limit 크기 이하의 배열에 잘라진 문자열을 저장해 리턴.
+
+- separator
+
+  - 필수 x
+  - 문자열을 잘라주는 구분자
+  - 값이 입력되지 않으면 문자열 전체를 배열에 담아서 리턴
+
+  ```javascript
+  let string1 = 'apple,banana,orange';
+  string1.split(',');
+  // ["apple", "banana", "grape"]
+  ```
+
+- limit
+
+  - 필수 x
+  - 최대 분할 개수
+
+  ```javascript
+  let string2 = 'water,coke,juice';
+  string2.split(',', 2);
+  //["water", "coke"]
   ```
 
   
