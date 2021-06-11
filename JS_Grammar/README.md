@@ -400,3 +400,59 @@ let newArr = arr.splice(1, 2);
   ```
 
   
+
+### 8. ASCII (American Standard Code for Information Interchange, 아스키)
+
+- A ~ Z  : 65 ~ 90
+- a ~ z   :   97 ~ 122
+
+
+
+
+
+### 9. toUpperCase(), toLowerCase()
+
+#### 1. toUpperCase()
+
+- string.toUpperCase()
+
+- 이 메서드는 문자열을 대문자로 변환해 반환. (문자 자체를 바꾸진 않음)
+
+  ```javascript
+  console.log('alphabet'.toUpperCase());
+  // 'ALPHABET'
+  ```
+
+
+
+#### 2. toLowerCase()
+
+- string.toLowerCase()
+
+- 이 메서드는 문자열을 소문자로 변환해 반환. (문자 자체를 바꾸진 않음)
+
+  ```javascript
+  console.log('ALPHABET'.toUpperCase());
+  // 'alphabet'
+  ```
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
