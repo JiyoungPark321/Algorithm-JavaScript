@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(s) {
+        let answer = "";
+        // 1. toUpperCase로 풀기
+        // answer = str.toUpperCase();
+
+        // 1-1.
+        // for (let x of s) {
+        //   if (x === x.toLowerCase()) {
+        //     answer += x.toUpperCase();
+        //   } else {
+        //     answer += x;
+        //   }
+        // }
+
+        // 2. 아스키코드로 변환해서 풀기(A~Z : 65~90 / a~z : 97~122)
+        for (x of s) {
+          let num = x.charCodeAt();
+          if (num >= 97 && num <= 122) {
+            answer += String.fromCharCode(num - 32);
+          } else {
+            answer += x;
+          }
+        }
+        return answer;
+      }
+
+      let str = "ItisTimeToStudy";
+      console.log(solution(str));
+    </script>
+  </body>
+</html>

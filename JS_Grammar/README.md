@@ -408,6 +408,53 @@ let newArr = arr.splice(1, 2);
 
 
 
+#### 1. charAt()
+
+```javascript
+let letter = 'coding';
+console.log(letter.charAt(0));
+// c
+
+console.log(letter.charAt(length -1));
+// g
+
+console.log(letter.charAt(1000) == '');
+// true
+```
+
+
+
+#### 2. charCodeAt()
+
+- 문자열중 하나를 선택해 아스키코드 번호로 변환해주는 함수
+
+```javascript
+let letter = 'a'
+let num = letter.charCodeAt();
+
+console.log(num);
+// 97
+```
+
+
+
+#### 3. String.fromCharCode()
+
+- 아스키코드번호를 받아 문자열을 반환해주는 함수
+
+```javascript
+let answer = "";
+answer += String.fromCharCode(97);
+console.log(answer);
+// a
+
+answer += String.fromCharCode(100, 101, 103);
+console.log(answer);
+// adeg
+```
+
+
+
 
 
 ### 9. toUpperCase(), toLowerCase()
@@ -437,6 +484,18 @@ let newArr = arr.splice(1, 2);
   ```
 
   
+
+
+
+
+
+### 10. 논리 연산자 (AND, OR, NOT)
+
+#### 1. `&&` (AND)
+
+#### 2. `||` (OR)
+
+#### 3. `!` (NOT)
 
 
 
