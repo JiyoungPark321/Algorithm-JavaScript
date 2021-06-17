@@ -160,7 +160,9 @@ return result;
 
 - JS 에서 안전한 최대 정수값을 나타낸다. (2^53 - 1)
 
+#### 2) Number.MIN_SAFE_INTEGER
 
+- JS 에서 안전한 최소 정수값을 나타낸다. (-(2^53 - 1))
 
 
 

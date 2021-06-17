@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(s) {
+        let answer = "";
+        let letterLength = exampleList[0].length;
+        // letterLength = Number.MIN_SAFE_INTEGER;
+        for (let x of s) {
+          if (x.length > letterLength) {
+            letterLength = x.length;
+            answer = x;
+          }
+        }
+        return answer;
+      }
+      let exampleList = ["teacher", "time", "student", "beautiful", "good"];
+      console.log(solution(exampleList));
+    </script>
+  </body>
+</html>
