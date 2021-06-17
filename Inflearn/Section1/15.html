@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(s) {
+        let answer = "";
+        let midNum = parseInt(s.length / 2);
+        // Math.floor 도사용 가능
+        // let midNum = Math.floor(s.length / 2);
+        if (s.length % 2) {
+          answer = s[midNum];
+        } else {
+          answer = s.substr(midNum - 1, 2);
+        }
+        return answer;
+      }
+      let str = "study";
+      // let str = "good";
+      console.log(solution(str));
+    </script>
+  </body>
+</html>

@@ -356,7 +356,9 @@ let newArr = arr.splice(1, 2);
 
   
 
-### 7. split()
+### 7. split(), substr(), substring()
+
+#### 1. split()
 
 - 문자열을 분할하는 메서드
 
@@ -401,7 +403,38 @@ let newArr = arr.splice(1, 2);
   // ["", "", COMPUTE", "P", "OG", "AMMING", "", "", ""]
   ```
 
-  
+
+
+
+#### 2. substr()
+
+- substr(시작인덱스, 길이)
+
+```javascript
+let letter = '12348439';
+let newLetter = a.substr(2,5);
+
+console.log(newLetter);
+//34843
+```
+
+
+
+#### 3. substring()
+
+- substring(시작인덱스, 종료인덱스-1)
+
+```javascript
+let letter = '12348439';
+let newLetter2 = a.substr(2,5);
+
+console.log(newLetter2);
+// 348
+```
+
+
+
+
 
 ### 8. ASCII (American Standard Code for Information Interchange, 아스키)
 
@@ -500,6 +533,40 @@ console.log(answer);
 #### 3. `!` (NOT)
 
 
+
+
+
+### 11. 사칙연산자
+
+#### 1. 나눗셈
+
+##### 1-1. 몫 ,  parseInt(string, n)
+
+```javascript
+let result = parseInt(13 / 5)
+
+console.log(result);
+// 2
+```
+
+##### - parseInt 란?
+
+- string 을 n 진법일 때의 값으로 바꾼다. 
+
+- n은 옵션으로 2부터 36까지 입력 가능하다.
+
+- 입력하지 않으면 10으로 처리한다.
+
+- ```javascript
+  parseInt('100', 2)
+  // 4
+  parseInt('12.6738')
+  // 12
+  ```
+
+- 
+
+##### 1-2 나머지, %
 
 
 
