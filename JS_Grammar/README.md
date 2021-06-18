@@ -572,6 +572,30 @@ console.log(result);
 
 
 
+### 12. indexOf
+
+- 문자열에서 특정 문자열의 위치를 찾고 검색된 문자열이 <b>첫번째</b>로 나타나는 위치 index를 리턴한다.
+
+- ```javas
+  string.indexOf(찾을 문자열, 찾기 시작할 위치)
+  ```
+
+  - 찾기 시작할 위치는 option
+
+- 찾는 문자열이 없으면 -1을 리턴한다.
+
+- 문자열을 찾을 때 대소문자를 구분한다.
+
+```javascript
+let string = 'applebanana';
+
+console.log(string.indexOf("p"));
+// 1
+
+console.log(string.indexOf("an"));
+// 6
+```
+
 
 
 
