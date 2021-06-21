@@ -166,7 +166,82 @@ return result;
 
 
 
-### 4. reduce, reduceRight
+
+
+### 4. array.splice()
+
+- 배열에 추가/제가/교체/추출 가능
+
+  ```javascript
+  arr.splice(start, count, [value1], [value2],...)
+  ```
+
+  
+
+#### 1. 배열에 요소 추가하기
+
+```javascript
+let arr = [0, 1, 2, 3];
+
+// 배열 2번째 위치한 곳에 숫자 5를 추가
+arr.splice(2, 0, 5);
+// [0, 1, 5, 2, 3]
+
+// 배열 2번째 위치한 곳에 숫자 5, 7 을 추가
+arr.splice(2, 0, 5, 7);
+```
+
+
+
+#### 2. 배열 요소 제거하기
+
+```javascript
+let arr = [0, 1, 2, 3];
+
+// 배열 1번째부터 1개 제거
+arr.splice(1, 1);
+// [0, 2, 3]
+
+// 배열 1번째부터 2개 제거
+arr.splice(0, 3);
+```
+
+
+
+#### 3. 배열 요소 교체하기
+
+```javascript
+let arr = [0, 1, 2, 3];
+
+// 배열 1번째부터 1개를 제거하고 숫자 5 추가
+arr.splice(1, 1, 5);
+// [0, 5, 2, 3]
+
+// 배열 1번째부터 2개 제거하고 숫자 10, 11 추가
+arr.splice(0, 10, 11, 3);
+```
+
+
+
+#### 4. 배열 요소 추출하기 (제거한걸 변수에 담아주면 됨)
+
+```javascript
+let arr = [0, 1, 2, 3];
+
+// 배열 1번째부터 1개를 제거 후 새로운 변수 newArr에 담아주기
+let newArr = arr.splice(1, 1);
+// [1]
+
+// 배열 1번째부터 2개 제거 후 새로운 변수 newArr에 담아주기
+let newArr = arr.splice(1, 2);
+// [1, 2]
+```
+
+
+
+##### - array 함수 3대장 : map, filter, reduce
+
+### 5. reduce, reduceRight
 
 #### 1. reduce
 
@@ -241,80 +316,141 @@ return result;
   // 6
   ```
 
-  
 
-### 5. array.splice()
 
-- 배열에 추가/제가/교체/추출 가능
+
+
+### 6. filter()
+
+- 참고문서 : https://7942yongdae.tistory.com/49
+
+- 배열을 순회하며 요소마다 조건 확인 후 조건을 만족하는 원소들로 구성된 새로운 배열을 리턴한다.
+
+```javascript
+Array.prototype.filter(callback[, thisArg])
+```
+
+- 주어진 배열의 값들을 오름차순으로 접근해 callbackfn을 통해 true를 반환하는 요소를 기준으로 신규 배열을 만들어 반환한다.
+
+```javascript
+const numbers = [1];
+
+numbers.filter((number, index, source) => {
+    // number : 요소값
+    // index : source에서 요소의 index
+    // source: 순회하는 대상
+    
+    console.log(number);
+    // 1
+    
+    console.log(index);
+    // 0
+    
+    console.log(source);
+    // [1]
+    
+    return number > 3;
+});
+
+```
+
+
+
+- 예제1 :  3보다 큰 수 거르기
 
   ```javascript
-  arr.splice(start, count, [value1], [value2],...)
+  const numbers = [1, 2, 3, 4, 5];
+  const result = numbers.filter(number => number > 3);
+  
+  console.log(numbers);
+  // [1, 2, 3, 4, 5]
+  
+  
+  console.log(result);
+  // [4, 5]
+  ```
+
+  - for문을 사용할 수 있지만 권장하지 않는다.
+
+  
+
+- 예제2 : JSON 배열 사용법
+
+  ```javascript
+  const guys = [
+      {name: 'TOM', money: 500 },
+      {name: 'JHONE', money: 400 },
+      {name: 'JAMES', money: 300 },
+      {name: 'KIM', money: 20 }
+  ];
+  
+  const rich = guys.filter(man => man.money > 300);
+  
+  console.log(rich);
+  // [
+  //	{name: 'TOM', money: 500 },
+  //	{name: 'JHONE', money: 400 }
+  // ]
+  ```
+
+
+
+- 예제3 : 다중 조건 사용하기
+
+  ```javascript
+  const numbers = [1, 2, 3, 4, 5];
+  
+  const result = numbers.filter(number => {
+      if (number) > 1 && number < 5 {
+      	return true;   
+      }
+      return false;
+  })
+  
+  console.log(result);
+  // [2, 3, 4]
+  ```
+
+
+
+
+- 예제 4 : 고차 함수
+
+- 배열 객체 메서드 중에 map, filter, reduce, forEach 등은 고차함수 이다.
+
+- 고차함수란?  
+
+  - 함수의 인수로 함수를 전달 받을 수 있는 함수를 고차함수라고 한다.
+  - 인자로 전달되는 함수를 콜백함수라고 한다.
+
+  ```javascript
+  const numbers = [1, 2, 3, 4, 5];
+  
+  const greaterThanThree = value => value > 3;
+  
+  const newNumbers = numbers.filter(greaterThanThree);
+  // or
+  // const newNumbers = numbers.filter(function(v, i){
+  //     return v > 3;
+  // })
+  
+  console.log(newNumbers);
+  // [4, 5]
   ```
 
   
 
-#### 1. 배열에 요소 추가하기
-
-```javascript
-let arr = [0, 1, 2, 3];
-
-// 배열 2번째 위치한 곳에 숫자 5를 추가
-arr.splice(2, 0, 5);
-// [0, 1, 5, 2, 3]
-
-// 배열 2번째 위치한 곳에 숫자 5, 7 을 추가
-arr.splice(2, 0, 5, 7);
-```
 
 
 
-#### 2. 배열 요소 제거하기
 
-```javascript
-let arr = [0, 1, 2, 3];
-
-// 배열 1번째부터 1개 제거
-arr.splice(1, 1);
-// [0, 2, 3]
-
-// 배열 1번째부터 2개 제거
-arr.splice(0, 3);
-```
+### 7. map()
 
 
 
-#### 3. 배열 요소 교체하기
-
-```javascript
-let arr = [0, 1, 2, 3];
-
-// 배열 1번째부터 1개를 제거하고 숫자 5 추가
-arr.splice(1, 1, 5);
-// [0, 5, 2, 3]
-
-// 배열 1번째부터 2개 제거하고 숫자 10, 11 추가
-arr.splice(0, 10, 11, 3);
-```
 
 
-
-#### 4. 배열 요소 추출하기 (제거한걸 변수에 담아주면 됨)
-
-```javascript
-let arr = [0, 1, 2, 3];
-
-// 배열 1번째부터 1개를 제거 후 새로운 변수 newArr에 담아주기
-let newArr = arr.splice(1, 1);
-// [1]
-
-// 배열 1번째부터 2개 제거 후 새로운 변수 newArr에 담아주기
-let newArr = arr.splice(1, 2);
-// [1, 2]
-```
-
-
-
-### 6. replace()
+### 8. replace()
 
 - 문자열에서 변경하려는 문자열이 여러번 반복될 경우, 첫번째로 발견한 문자열만 치환한다.
 
@@ -356,7 +492,7 @@ let newArr = arr.splice(1, 2);
 
   
 
-### 7. split(), substr(), substring()
+### 9. split(), substr(), substring()
 
 #### 1. split()
 
@@ -436,7 +572,7 @@ console.log(newLetter2);
 
 
 
-### 8. ASCII (American Standard Code for Information Interchange, 아스키)
+### 10. ASCII (American Standard Code for Information Interchange, 아스키)
 
 - A ~ Z  : 65 ~ 90
 - a ~ z   :   97 ~ 122
@@ -524,7 +660,7 @@ console.log(answer);
 
 
 
-### 10. 논리 연산자 (AND, OR, NOT)
+### 11. 논리 연산자 (AND, OR, NOT)
 
 #### 1. `&&` (AND)
 
@@ -536,7 +672,7 @@ console.log(answer);
 
 
 
-### 11. 사칙연산자
+### 12. 사칙연산자
 
 #### 1. 나눗셈
 
@@ -572,7 +708,7 @@ console.log(result);
 
 
 
-### 12. indexOf
+### 13. indexOf
 
 - 문자열에서 특정 문자열의 위치를 찾고 검색된 문자열이 <b>첫번째</b>로 나타나는 위치 index를 리턴한다.
 
@@ -596,7 +732,23 @@ console.log(string.indexOf("an"));
 // 6
 ```
 
+- 리스트인 경우
 
+```javascript
+let newList = ["포도", "딸기", "수박", "참외", "자두"];
+
+console.log(newList.indexOf("딸기"));
+// 1
+
+console.log(newList.indexOf("딸"));
+// -1
+```
+
+
+
+
+
+- 
 
 
 
