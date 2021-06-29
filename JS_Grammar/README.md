@@ -166,9 +166,47 @@ return result;
 
 
 
+##### - array method
+
+### 4. array - push(), pop(), sort(), splice()
+
+- 배열 : 값을 순차적으로 저장하는 용도로 사용
+
+- `[ ] (대괄호)` 를 사용해 표기하며 데이터 타입 제약없이 내부 값으로 사용 가능
+
+- ```javascript
+  let array = [1, 2, 3];
+  
+  // 배열 요소에 접근하기
+  console.log(array[0]);   // 1
+  console.log(array[2]);   // 3
+  
+  // 배열 요소의 개수 확인하기
+  console.log(array.length);   // 3
+  
+  // 마지막 요소에 접근하기
+  console.log(array[array.length -1]);   // 3
+  ```
 
 
-### 4. array.splice()
+
+### 4-1. array.push()
+
+- 배열의 마지막에 새로운 요소를 추가한 후, 변경된 배열의 길이를 반환
+
+- ```javascript
+  let arr = [1, 2, 3];
+  
+  arr.push("new");    // 3
+  
+  console.log(arr);   // [1, 2, 3, 'new'];
+  ```
+
+- 
+
+
+
+### 4-4. array.splice()
 
 - 배열에 추가/제가/교체/추출 가능
 
@@ -237,7 +275,7 @@ let newArr = arr.splice(1, 2);
 // [1, 2]
 ```
 
-
+​      
 
 ##### - array 함수 3대장 : map, filter, reduce
 
